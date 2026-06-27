@@ -21,7 +21,7 @@ Given a packet capture, answer:
 
 First stop in any pcap analysis — **Statistics → Conversations → TCP tab**. This gives you a bird's-eye view of every conversation in the capture without having to scroll packet-by-packet.
 
-![Conversations view](screenshots/01_conversations_view.png)
+![Conversations view](screenshots/02_open_ports_filter.png)
 
 This single view answered three of my four questions immediately:
 
@@ -63,7 +63,7 @@ tcp.flags.syn==1 and tcp.flags.ack==1
 
 This says: "only show me packets where both the SYN flag AND the ACK flag are set to 1." That combination only happens at step 2 of the handshake above — i.e., a port confirming it's open.
 
-![Open ports filter results](screenshots/02_open_ports_filter.png)
+![Open ports filter results](screenshots/03_syn_ack_results.png)
 
 Four rows matched. But only **three** of them are actually part of the scan:
 
@@ -80,7 +80,7 @@ So the real result: **ports 22 (SSH), 80 (HTTP), and 443 (HTTPS) were open** on 
 
 Filters are great, but it's worth knowing how to confirm this manually too — just in case a filter typo gives you a false sense of confidence. Click into any individual packet and expand the **Transmission Control Protocol** section in the details pane:
 
-![SYN ACK packet detail](screenshots/03_syn_ack_results.png)
+![SYN ACK packet detail](screenshots/01_conversations_view.png)
 
 Here, frame 11 shows `Source Port: 22`, and further down in the flags field both the SYN and ACK bits are set — confirming by hand exactly what the filter told us. This is a good habit: let the filter narrow things down, then manually verify at least one or two results so you're not just trusting the tool blindly.
 
