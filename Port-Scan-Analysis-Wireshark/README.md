@@ -2,7 +2,7 @@
 
 A walkthrough of analyzing a TCP port scan capture (`portscan_challenge.pcap`) to identify the attacker, the target, and which ports were left open. Done entirely in Wireshark by reading TCP flags — no Nmap output required, just the raw handshake packets.
 
-> 📌 **Credit:** the `portscan_challenge.pcap` file used in this walkthrough was originally posted as a public challenge by [Cybershujaa](https://www.linkedin.com/company/cybershujaa/) on LinkedIn. All analysis, screenshots, and write-up below are my own.
+> 📌 **Credit:** the `portscan_challenge.pcap` file used in this walkthrough was originally posted as a public challenge by [Cybershujaa](https://www.linkedin.com/feed/update/urn:li:activity:7476499563995070464/) on LinkedIn. All analysis, screenshots, and write-up below are my own.
 
 ## 📁 Files in this repo
 
